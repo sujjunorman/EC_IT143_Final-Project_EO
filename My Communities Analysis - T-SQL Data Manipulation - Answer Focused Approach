@@ -1,0 +1,54 @@
+--Q: What is the current date and time?
+--A: Let ask SQL server and find out...
+ Select 'Hello World!' AS My_Message,
+ GETDATE() AS Current_Date_Time;
+
+
+--Q: What is the current date and time?
+--A: Let ask SQL server and find out...
+ Select 'Hello World!' AS My_Message,
+ GETDATE() AS Current_Date_Time;
+
+
+-- Create the table
+CREATE TABLE HelloWorld (
+  id INT PRIMARY KEY,
+  message VARCHAR(50)
+);
+
+-- Insert the "Hello World" data
+INSERT INTO HelloWorld (id, message)
+VALUES (1, 'Hello, World!');
+
+-- Verify the data in the table
+SELECT * FROM HelloWorld;
+
+TRUNCATE TABLE HelloWorld;
+
+INSERT INTO HelloWorld
+SELECT *
+FROM HelloWorld;
+
+CREATE PROCEDURE HelloWorld
+AS
+BEGIN
+    TRUNCATE TABLE Hello_World;
+
+    INSERT INTO Hello_World
+    SELECT greeting
+    FROM Hello_World;
+END;
+EXEC HelloWorld;
+
+CREATE PROCEDURE HelloWorld
+AS
+BEGIN
+    TRUNCATE TABLE Hello_World;
+
+    INSERT INTO Hello_World
+    SELECT greeting
+    FROM Hello_World;
+END;
+EXEC HelloWorld;
+
+
